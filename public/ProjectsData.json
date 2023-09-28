@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "id": "residenital",
+      "photo": "./imgs/brossia.jpg",
+      "pragraph": "Residenital",
+      "title": "title1"
+    },
+    {
+      "id": "suitantable",
+      "photo": "./imgs/chobham.jpg",
+      "pragraph": "suitantable",
+      "title": "title2"
+    },
+    {
+      "id": "commercial",
+      "photo": "./imgs/combines.jpg",
+      "pragraph": "commercial",
+      "title": "title3"
+    },
+    {
+      "id": "residenital",
+      "photo": "./imgs/innovation.jpg",
+      "pragraph": "Residenital",
+      "title": "title4"
+    },
+    {
+      "id": "commercial",
+      "photo": "./imgs/inspired (1).jpg",
+      "pragraph": "commercial",
+      "title": "title5"
+    },
+    {
+      "id": "residenital",
+      "photo": "./imgs/nordic.jpg",
+      "pragraph": "Residenital",
+      "title": "title6"
+    },
+    {
+      "id": "commercial",
+      "photo": "./imgs/sample.jpg",
+      "pragraph": "commercial",
+      "title": "title7"
+    },
+    {
+      "id": "residenital",
+      "photo": "./imgs/hidden-agenda.jpg",
+      "pragraph": "Residenital",
+      "title": "title8"
+    }
+  ]
+}

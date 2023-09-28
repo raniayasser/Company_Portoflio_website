@@ -1,0 +1,1513 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Inter:wght@300&family=Montserrat:wght@500&family=Work+Sans:wght@100;200;300;500&display=swap");
+
+$primayColor: rgb(231, 188, 136);
+
+@mixin D-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin w-h-fill {
+  width: 100%;
+  height: 100%;
+}
+@mixin link {
+  text-decoration: none;
+  color: black;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+@mixin prag {
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.679);
+}
+@mixin head {
+  font-size: 50px;
+  width: 80%;
+  font-weight: 300;
+  color: black;
+}
+@mixin Btn {
+  padding: 20px 50px;
+  background-color: $primayColor;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 18px;
+  color: black;
+  position: relative;
+  transition: 0.5s;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgb(63, 63, 63);
+    z-index: -1;
+    clip-path: circle(0% at 50% 50%);
+    transition: 0.5s ease-in-out;
+  }
+  &:hover {
+    color: white;
+    background-color: transparent;
+  }
+  &:hover::before {
+    clip-path: circle(100% at 50% 50%);
+  }
+}
+@mixin hero-head {
+  font-size: 100px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+}
+@mixin hero-prag {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 5px;
+  font-family: sans-serif;
+}
+@mixin bg-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+}
+@mixin before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include w-h-fill;
+  z-index: -1;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+body {
+  overflow-x: hidden;
+}
+
+.loadingg {
+  background-color: $primayColor;
+  @include w-h-fill;
+  @include D-flex;
+}
+html[data-theme="dark"] {
+  body {
+    background-color: rgba(0, 0, 0, 0.819);
+    color: white;
+    .service_txt h1,
+    .aboutSec h1,
+    footer .row h4,
+    .pricingTaple .pricing-head,
+    .projectSLider .headpro h1,
+    .Projects .container h1 {
+      color: wheat;
+    }
+    .pricingTaple button {
+      color: white;
+      border: 1px solid rgb(255, 255, 255);
+    }
+    .review-sec {
+      background-color: #393939;
+      .review-card {
+        background-color: black;
+      }
+      p {
+        span {
+          color: wheat;
+        }
+        color: #949494;
+      }
+      .iconReview {
+        &:hover {
+          color: rgb(255, 255, 255);
+        }
+      }
+    }
+    .aboutSec .about-prag1,
+    .aboutSec .about-prag2,
+    .aboutSec .parg,
+    .services .prag,
+    .services .card_txt a,
+    footer .row a,
+    .projectSLider .headpro a,
+    .teams h1,
+    .teams .team-txt h4 {
+      color: white;
+    }
+    footer .row .dark-mode-logo {
+      display: block;
+    }
+    footer .row .light-mode-logo {
+      display: none;
+    }
+  }
+
+  .nav-siderbar {
+    .dark-mode {
+      display: block;
+    }
+    .light-mode {
+      display: none;
+    }
+    .nav-menu {
+      .nav-sidebar-links {
+        background-color: black;
+        .close-sidebar {
+          color: white;
+        }
+        li a {
+          color: white;
+        }
+      }
+    }
+  }
+  #navbar-light {
+    background-color: black;
+    .imgNav {
+      display: block;
+    }
+    .imgNavLight {
+      display: none;
+    }
+    a {
+      color: white;
+    }
+    .navlink::before {
+      background-color: white;
+    }
+    .icon-sidebar {
+      color: white;
+    }
+    .translate-icon {
+      color: white;
+    }
+    .navRight {
+      .translation-div {
+        button {
+          color: white;
+        }
+      }
+      .translate-icon {
+        color: white;
+      }
+    }
+  }
+
+  .Projects {
+    .container p {
+      a {
+        color: white;
+      }
+      .homelink {
+        color: #949494;
+      }
+    }
+    .nav-pills .nav-link {
+      color: white;
+      &::before {
+        background-color: white;
+      }
+    }
+  }
+  .contactUs {
+    color: white;
+    h1,
+    h3 {
+      color: white;
+    }
+    p {
+      a {
+        color: white;
+      }
+    }
+    input {
+      color: white;
+      border-bottom: 0.5px solid #545454;
+      background-color: transparent;
+      &::placeholder {
+        color: wheat;
+      }
+    }
+
+    .map-btn {
+      a {
+        color: white;
+      }
+    }
+  }
+}
+//--------------------------( Navbar  style ) --------------------------------------------------
+.navbarr {
+  background-color: transparent;
+}
+nav {
+  .container {
+    @include D-flex;
+    justify-content: space-between;
+  }
+
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  padding-top: 20px;
+  a {
+    @include link;
+    padding: 0 10px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    position: relative;
+  }
+  .navlink::before {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 0.8px;
+    background-color: white;
+    transition: 0.5s ease-in-out;
+    clip-path: circle(0% at 50% 50%);
+  }
+  a:hover::before,
+  .active::before {
+    transition: 0.5s ease-in-out;
+    clip-path: circle(100% at 50% 50%);
+  }
+  a:hover::after,
+  .active::after {
+    width: 80%;
+  }
+
+  @media only screen and (max-width: 992px) {
+    #basic-navbar-nav {
+      display: none;
+    }
+  }
+  .navRight {
+    .translation-div {
+      list-style: none;
+      button {
+        color: white;
+      }
+    }
+    .translate-icon {
+      color: white;
+    }
+  }
+  // nav SideBar style
+  .nav-siderbar {
+    .nav-menu {
+      background-color: #000000a7;
+      z-index: 999;
+      height: 100vh;
+      width: 0%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      transition: 0.6s ease-in-out;
+      overflow: hidden;
+      color: black;
+      .nav-sidebar-links {
+        display: flex;
+        background-color: white;
+        width: 0;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        transition: 0.5s ease-in-out;
+      }
+    }
+
+    ul {
+      width: 100%;
+      padding: 8px 0px 8px 28px;
+      li {
+        border-bottom: 1px solid #eee;
+        div {
+          .dark-mode {
+            display: none;
+          }
+          .light-mode {
+            display: block;
+          }
+          .close-sidebar {
+            font-size: 24px;
+            margin-right: 15px;
+          }
+          margin-bottom: 20px;
+        }
+        a {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          padding: 16px 0px 16px 16px;
+          color: black;
+          transition: 0.3s;
+          &:hover {
+            padding-left: 28px;
+          }
+        }
+      }
+    }
+    .nav-menu-active {
+      @extend .nav-menu;
+      width: 100%;
+      transition: 0.5s ease-in-out;
+      .nav-sidebar-links {
+        width: 300px;
+      }
+    }
+    .icon-sidebar {
+      color: white;
+      font-size: 24px;
+      font-weight: lighter;
+    }
+  }
+}
+#navbar-light {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #c0c0c0;
+  background-color: white;
+  .imgNav {
+    display: none;
+  }
+  .imgNavLight {
+    display: block;
+  }
+  a {
+    color: black;
+  }
+  .navlink::before {
+    background-color: black;
+  }
+  .icon-sidebar {
+    color: black;
+  }
+  .translate-icon {
+    color: black;
+  }
+  .navRight {
+    .translation-div {
+      button {
+        color: black;
+      }
+    }
+    .translate-icon {
+      color: black;
+    }
+  }
+}
+.activee {
+  background-color: black;
+  color: black;
+}
+
+//------------------( Banner Style )------------------------------------------------
+.banner {
+  // position: relative;
+  .swiper {
+    .swiper-slide {
+      background-image: url("../public/imgs/banner.jpg");
+      @include bg-img;
+
+      &::before {
+        @include before;
+      }
+    }
+  }
+
+  .hero-txt {
+    // margin-top: 300px;
+    color: white;
+  }
+  .hero-txt h1 {
+    @include hero-head;
+  }
+
+  .hero-prag {
+    @include hero-prag;
+  }
+  button {
+    @include Btn;
+  }
+
+  .icons {
+    @extend .hero-txt;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 300;
+  }
+  .icons p {
+    margin-bottom: 200px;
+  }
+  .socialIcon a {
+    color: white;
+
+    &:hover {
+      color: $primayColor;
+    }
+  }
+  .whatsappCon {
+    margin-top: 900px;
+
+    .whatslink {
+      @include link;
+      color: rgb(255, 255, 255);
+      letter-spacing: 0.3px;
+      transition: 0.3s;
+      font-size: 14px;
+
+      &:hover {
+        color: $primayColor;
+      }
+    }
+  }
+  @media only screen and (max-width: 1200px) {
+    .whatsappCon {
+      margin-left: -50px;
+      text-align: end;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .hero-txt {
+      h1 {
+        font-size: 90px;
+      }
+    }
+
+    .whatsappCon {
+      margin-left: -100px;
+    }
+  }
+  @media only screen and (max-width: 758px) {
+    .swiper-slide {
+      background-size: cover;
+      height: 100vh;
+    }
+    .hero-txt {
+      transform: translate(5%, 14%);
+
+      h1 {
+        font-size: 50px;
+      }
+    }
+    .hero-prag {
+      font-size: 22px;
+    }
+    button {
+      padding: 20px 35px;
+      font-size: 16px;
+      margin-top: 80px;
+    }
+    .whatsappCon {
+      margin: 100px 50px 100px;
+      text-align: end;
+    }
+  }
+}
+
+//------------------( Services Style )------------------------------------------------
+.services {
+  margin-left: 20px;
+  .pattern {
+    margin-left: -12%;
+    position: absolute;
+  }
+  .service_txt {
+    margin-left: 20%;
+  }
+  .prag {
+    @include prag;
+  }
+  .service_card {
+    border: 1px solid rgb(230, 230, 230);
+    padding: 25px 50px;
+    margin: 30px 0px;
+
+    &::before {
+      content: "";
+      transition: 0.5s ease-in-out;
+      clip-path: circle(0% at 50% 50%);
+      position: absolute;
+      background-color: $primayColor;
+      width: 5px;
+      height: 155px;
+      margin-left: -50px;
+      transition: 0.3s;
+      text-align: center;
+    }
+    &:hover::before {
+      clip-path: circle(100% at 50% 50%);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  .card_txt {
+    margin-left: 20px;
+  }
+  .card_txt a {
+    @include link;
+    font-size: 20px;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .service_txt h1 {
+    @include head;
+  }
+  .card_txt p {
+    font-size: 16px;
+    width: 70%;
+  }
+  .service_img {
+    height: 100vh;
+    width: 100%;
+  }
+  @media only screen and (max-width: 1200px) {
+    .service_card {
+      padding: 25px 20px;
+      &::before {
+        content: "";
+
+        margin-left: -25px;
+      }
+    }
+
+    .service_txt h1 {
+      font-size: 40px;
+    }
+    .card_txt p {
+      font-size: 14px;
+      width: 80%;
+    }
+    .service_txt {
+      margin-left: 0%;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    margin-left: 20px;
+    .row {
+      margin: 0px auto;
+    }
+
+    .service_card {
+      padding: 25px 20px;
+      &::before {
+        content: "";
+
+        margin-left: -25px;
+      }
+    }
+
+    .service_txt h1 {
+      font-size: 40px;
+    }
+    .card_txt p {
+      font-size: 14px;
+      width: 100%;
+    }
+    .service_txt {
+      margin-left: 0%;
+    }
+  }
+  @media only screen and (max-width: 757px) {
+    .service_txt {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service_txt h1 {
+      text-align: center;
+      width: 100%;
+    }
+
+    .service_img {
+      height: 100vh;
+    }
+    .service_txt {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .service_card {
+      padding: 30px 20px;
+      margin: 12px auto;
+    }
+  }
+}
+
+//------------------( Projects Slider Component && Projects Page Style )------------------------------------------------
+@mixin projectCard-txt {
+  position: absolute;
+  bottom: 5%;
+  left: 30px;
+  z-index: 2;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  p {
+    text-transform: uppercase;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+  }
+  h1 {
+    font-size: 40px;
+  }
+}
+@mixin project-Before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+@mixin project-After {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  z-index: 1;
+  background-color: rgb(224, 179, 120);
+  transition: 0.5s ease-in-out;
+}
+.projectSLider {
+  .headpro {
+    @include D-flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    a {
+      @include link;
+      color: rgba(0, 0, 0, 0.83);
+      font-size: 20px;
+      transition: 0.3s;
+      &:hover {
+        color: $primayColor;
+      }
+    }
+    h1 {
+      color: black;
+      font-size: 50px;
+    }
+  }
+  .swiper-pagination-bullet {
+    background-color: $primayColor;
+    height: 12px;
+    width: 12px;
+  }
+
+  .swiper-slide {
+    transition: 0.5s ease-in-out;
+    height: 100%;
+    width: 480px;
+    img {
+      height: 60vh;
+      object-fit: cover;
+      position: relative;
+    }
+    .slide-text {
+      @include projectCard-txt;
+    }
+
+    &::before {
+      @include project-Before;
+    }
+    &::after {
+      @include project-After;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+    &:hover .slide-text {
+      color: black;
+    }
+  }
+  @media only screen and (max-width: 568px) {
+    .headpro {
+      a {
+        font-size: 18px;
+      }
+      h1 {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+.Projects {
+  border-top: 1px solid #c0c0c0;
+  border-bottom: 1px solid #c0c0c0;
+  margin-top: 100px;
+  padding: 200px 0;
+  .container {
+    p {
+      font-size: 24px;
+      a {
+        @include link;
+        letter-spacing: 0.5px;
+      }
+      .homelink {
+        color: #949494;
+      }
+    }
+
+    justify-content: space-between;
+    h1 {
+      @include hero-head;
+      font-size: 70px;
+      color: black;
+      font-weight: 500;
+    }
+    .nav-pills {
+      margin-bottom: 100px;
+      margin-top: 50px;
+      .nav-link {
+        background-color: transparent;
+        color: black;
+        position: relative;
+        // transition: 0.3s ease-in-out;
+        padding-bottom: 0px;
+        &::before {
+          content: " ";
+          position: absolute;
+          bottom: 0;
+          left: 15%;
+          width: 70%;
+          height: 0.8px;
+          background-color: black;
+          transition: 0.3s ease-in-out;
+          clip-path: circle(0% at 50% 50%);
+        }
+        &:hover::before {
+          transition: 0.5s ease-in-out;
+          clip-path: circle(100% at 50% 50%);
+        }
+      }
+    }
+  }
+
+  .row {
+    @include D-flex;
+    justify-content: start;
+  }
+
+  .projectSlide {
+    width: 105%;
+    @include D-flex;
+    position: relative;
+    transition: 0.5s ease-in-out;
+    margin-top: 5px;
+    img {
+      width: 100%;
+      height: 60vh;
+
+      object-fit: cover;
+      position: relative;
+    }
+    .slide-text {
+      @include projectCard-txt;
+    }
+    &::before {
+      @include project-Before;
+    }
+    &::after {
+      @include project-After;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+    &:hover .slide-text,
+    &:hover .slide-text a {
+      color: black;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    .nav-pills {
+      justify-content: start;
+    }
+    .container {
+      h1 {
+        font-size: 50px;
+      }
+    }
+  }
+}
+
+.singleProject {
+  position: relative;
+  @include w-h-fill;
+  background-size: contain;
+  &::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include w-h-fill;
+    z-index: 1;
+  }
+  .text {
+    @include w-h-fill;
+    color: white;
+    z-index: 3;
+    position: relative;
+    // @include D-flex;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    @include projectCard-txt;
+    h3 {
+      @include head;
+      color: white;
+    }
+  }
+}
+
+//------------------( About Component Style )------------------------------------------------
+.aboutSec {
+  margin: 150px;
+  .about-sec-txt {
+    .parg {
+      @include prag;
+    }
+    h1 {
+      @include head;
+      width: 100%;
+    }
+    .about-prag1 {
+      font-size: 25px;
+      letter-spacing: 0.8px;
+      width: 70%;
+      margin: 50px 0;
+      color: rgba(48, 48, 48, 0.863);
+    }
+    .about-prag2 {
+      width: 90%;
+      font-size: 13px;
+      color: rgba(48, 48, 48, 0.863);
+    }
+  }
+
+  button {
+    @include Btn;
+  }
+
+  .about-imgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    .pattern {
+      position: absolute;
+      z-index: -1;
+      left: -1%;
+      top: 10%;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    margin: 150px 20px;
+    .about-sec-txt {
+      h1 {
+        width: 100%;
+        font-size: 30px;
+      }
+      .about-prag1 {
+        width: 100%;
+      }
+
+      button {
+        padding: 20px 40px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    margin: 150px 20px;
+    .about-sec-txt {
+      h1 {
+        font-size: 30px;
+      }
+      .about-prag1 {
+        width: 100%;
+      }
+    }
+  }
+}
+
+//------------------( Pricing Table Component Style )------------------------------------------------
+.pricingTaple {
+  .pricing-head {
+    text-align: center;
+    color: black;
+    margin-bottom: 30px;
+  }
+  .toggle-price {
+    @include D-flex;
+    span {
+      padding: 0 10px;
+    }
+    .toggler-btn {
+      background-color: rgb(12, 145, 14);
+      &:hover {
+        background-color: rgb(12, 145, 14);
+      }
+    }
+  }
+  .price-card {
+    margin-top: 50px;
+    border: 1px solid rgb(12, 145, 14);
+    padding: 50px 30px;
+    .p-title {
+      @include prag;
+      color: #949494;
+      font-size: 14px;
+    }
+    .prag {
+      color: #545454;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px dashed #949494;
+    }
+    .year-month {
+      text-transform: capitalize;
+      font-size: 20px;
+      .priceNum {
+        color: rgb(12, 145, 14);
+        font-size: 40px;
+      }
+    }
+    .price-icon {
+      padding-bottom: 12px;
+      .p-icon {
+        color: rgb(12, 145, 14);
+      }
+    }
+    a {
+      @include D-flex;
+      text-decoration: none;
+      button {
+        margin-top: 50px;
+        border: 1px solid black;
+        @include Btn;
+        background-color: transparent;
+        padding: 15px 30px;
+        letter-spacing: 0.5px;
+        font-size: 14px;
+
+        &::before {
+          background-color: $primayColor;
+        }
+        &:hover {
+          color: black;
+          border-color: $primayColor;
+        }
+      }
+    }
+  }
+}
+
+//------------------( Reviews section Style )------------------------------------------------
+.review-sec {
+  padding: 100px 0px;
+  background-color: #eee;
+
+  // @include D-flex;
+  .swiper-slide {
+    img {
+      margin-top: 100px;
+      filter: opacity(50%);
+      transition: 0.5s;
+
+      &:hover {
+        filter: opacity(100%);
+      }
+    }
+  }
+  .prev-next-Icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .iconReview {
+      color: #949494;
+      transition: 0.3s;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+
+  .swiper-slide {
+    margin-bottom: 100px;
+    width: 80%;
+    .review-card {
+      background-color: white;
+      position: relative;
+      padding: 20px;
+      height: 80%;
+      &::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: $primayColor;
+        transition: 0.5s ease-in-out;
+        clip-path: circle(0% at 50% 50%);
+      }
+      &:hover::before {
+        transition: 0.5s ease-in-out;
+        clip-path: circle(100% at 50% 50%);
+      }
+      span {
+        font-size: 20px;
+      }
+    }
+    .comment {
+      display: flex;
+      justify-content: end;
+      align-items: end;
+      .commentIcon {
+        color: $primayColor;
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+//------------------( Footer Style )------------------------------------------------
+footer {
+  padding: 50px 0px;
+  .row1 {
+    border-bottom: 1px solid #c0c0c0;
+
+    padding-bottom: 50px;
+
+    img {
+      width: 70px;
+      object-fit: contain;
+      margin: 25px 0px;
+    }
+    h4 {
+      @include head;
+      font-size: 26px;
+      margin: 25px 0px;
+    }
+    .foot-info a {
+      @include link;
+      padding: 5px 0px;
+      letter-spacing: 1px;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.81);
+      transition: 0.3s;
+
+      &:hover {
+        color: $primayColor;
+      }
+    }
+    .foot-links {
+      a {
+        @include link;
+        @include D-flex;
+        justify-content: start;
+        font-size: 14px;
+        padding: 8px 0px;
+        letter-spacing: 1px;
+        transition: 0.3s;
+        color: rgba(0, 0, 0, 0.81);
+
+        &:hover {
+          color: $primayColor;
+          padding-left: 10px;
+        }
+      }
+    }
+
+    .dark-mode-logo {
+      display: none;
+    }
+  }
+  .row2 {
+    .f-socialLinks a {
+      @include link;
+      font-size: 14px;
+      padding: 5px;
+      transition: 0.3s;
+      &:hover {
+        color: rgb(255, 123, 0);
+      }
+    }
+    button {
+      transition: 0.3s;
+      &:hover {
+        color: rgb(255, 123, 0);
+      }
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .row1 {
+      .foot-col {
+        h4 {
+          margin: 30px 0px 10px 0px;
+        }
+      }
+    }
+    .row2 {
+      text-align: center;
+    }
+  }
+}
+
+//------------------( About Page Style )------------------------------------------------
+.about-hero {
+  padding: 200px 0 100px 0;
+  .row {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  background-image: url("../public/imgs/1 (4).jpg");
+  @include bg-img;
+  background-attachment: fixed;
+
+  position: relative;
+  z-index: 3;
+  &::before {
+    @include before;
+  }
+
+  .about-txt-page {
+    color: white;
+    h1 {
+      @include hero-head;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+  .whatsappCon {
+    .whatslink {
+      @include link;
+      color: rgb(255, 255, 255);
+      letter-spacing: 0.3px;
+      transition: 0.3s;
+      font-size: 14px;
+      &:hover {
+        color: $primayColor;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 758px) {
+    padding: 100px 0 80px 0;
+
+    .row {
+      height: 100%;
+      display: flex;
+      justify-content: start;
+    }
+    .about-txt-page {
+      color: white;
+      h1 {
+        width: 50%;
+      }
+      p {
+        width: 50%;
+      }
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    padding: 200px 0 80px 0;
+    .row {
+      height: 100%;
+    }
+  }
+}
+
+// Team Section
+.teams {
+  padding: 200px 0px;
+  border-bottom: 1px solid #c0c0c0;
+  .row {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    font-size: 40px;
+    letter-spacing: 0.8px;
+    color: black;
+    margin-bottom: 50px;
+  }
+
+  .team-card {
+    .div {
+      height: 100%;
+      width: 100%;
+      img {
+        height: 100%;
+        width: 100%;
+        margin: 30px 0px;
+      }
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      .image {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        right: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        transition: 0.5s ease-in-out;
+        .team_icons {
+          background-color: #ddd;
+          position: absolute;
+          right: 3%;
+          bottom: 3%;
+          width: 0;
+          transition: 0.5s ease-in-out;
+          padding: 5px;
+          @include D-flex;
+          border-radius: 1px;
+          opacity: 0;
+          .icon {
+            filter: opacity(70%);
+            transition: 0.3s;
+            color: black;
+            font-size: 20px;
+            &:hover {
+              filter: opacity(100%);
+            }
+          }
+        }
+      }
+      &:hover .image {
+        width: 100%;
+      }
+      &:hover .image .team_icons {
+        width: 40%;
+        opacity: 1;
+      }
+    }
+    .team-txt {
+      h4 {
+        color: #0e0e0e;
+        font-size: 28px;
+        letter-spacing: 0.8px;
+        font-weight: lighter;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+          color: $primayColor;
+        }
+      }
+      p {
+        color: #505050;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 100;
+      }
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .row {
+      justify-content: start;
+    }
+    .team-card {
+      .div {
+        img {
+          height: 100%;
+          width: 100%;
+          margin-top: 30px;
+        }
+
+        .icon {
+          font-size: 16px;
+        }
+        &:hover .image .team_icons {
+          width: 80%;
+        }
+      }
+      .team-txt {
+        margin-top: 30px;
+        h4 {
+          color: #0e0e0e;
+          font-size: 24px;
+          letter-spacing: 0.8px;
+          font-weight: lighter;
+          cursor: pointer;
+          transition: 0.3s;
+          &:hover {
+            color: $primayColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+//------------------( Contact Page Style )------------------------------------------------
+.mapouter {
+  border-top: 1px solid #c0c0c0;
+  padding-top: 120px;
+  @media only screen and (max-width: 758px) {
+    iframe {
+      height: 70vh;
+    }
+  }
+}
+
+.contactUs {
+  border-bottom: 1px solid #949494;
+
+  padding: 150px 0px;
+  .row {
+    @include D-flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .contact-txt {
+    h1 {
+      @include head;
+      margin-bottom: 50px;
+      width: 100%;
+    }
+    h3 {
+      color: black;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    p {
+      width: 55%;
+      font-size: 14px;
+      a {
+        @include link;
+        text-transform: lowercase;
+        transition: 0.3s;
+        &:hover {
+          color: $primayColor;
+        }
+      }
+    }
+  }
+  .map-btn {
+    a {
+      @include link;
+    }
+    margin: 50px 0px;
+
+    border: 1px solid #393939;
+
+    &:hover {
+      a {
+        color: white;
+      }
+    }
+    @include Btn;
+    background-color: transparent;
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+
+  // ----------- { Form Contact Style }-----------------------
+  form {
+    @include D-flex;
+    flex-direction: column;
+    align-items: start;
+    .name-email {
+      @include D-flex;
+      justify-content: space-between;
+      align-items: start;
+      width: 100%;
+    }
+    input {
+      width: 100%;
+      padding: 15px 0px;
+      margin: 0px 20px 0 0;
+      color: black;
+      border-bottom: 0.5px solid #c0c0c0;
+      &::placeholder {
+        color: black;
+      }
+    }
+    textarea {
+      @extend input;
+      margin: 35px 0 0;
+      padding-bottom: 100px;
+    }
+    button {
+      @include Btn;
+      margin: 70px 0;
+      padding: 15px 30px;
+      font-size: 16px;
+    }
+    textarea:focus,
+    input:focus {
+      outline: none;
+    }
+  }
+  .form-head {
+    color: black;
+    margin-bottom: 50px;
+    font-size: 18px;
+
+    font-weight: 500;
+  }
+
+  @media only screen and (max-width: 758px) {
+    .row {
+      text-align: center;
+    }
+    .Contact-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+    }
+    .contact-txt {
+      p {
+        width: 100%;
+      }
+    }
+    button {
+      padding: 20px 25px;
+    }
+    form {
+      align-items: center;
+    }
+  }
+}
