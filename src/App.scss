@@ -97,6 +97,7 @@ body {
 .loadingg {
   background-color: $primayColor;
   @include w-h-fill;
+    height: 100vh;
   @include D-flex;
 }
 html[data-theme="dark"] {
