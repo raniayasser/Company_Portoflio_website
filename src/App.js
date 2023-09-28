@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
-import BeatLoader from "react-spinners/BeatLoader";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 // -------------- { Components }-----------------------------
 import Navbarr from "./Components/Navbarr";
@@ -24,7 +24,7 @@ const App = () => {
     <>
       {loading ? (
         <div className="loadingg">
-          <BeatLoader color="#000" />
+           <ScaleLoader color="#000" />
         </div>
       ) : (
         <BrowserRouter>
