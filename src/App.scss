@@ -1172,6 +1172,30 @@ footer {
       }
     }
   }
+    @media only screen and (max-width: 570px) {
+    .row {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h4 {
+        width: 100%;
+      }
+      .foot-links {
+        a {
+          justify-content: center;
+          text-align: center;
+        }
+      }
+    }
+    .row2 {
+      .f-socialLinks a {
+        font-size: 12px;
+        padding: 3px;
+      }
+    }
+  }
+
   @media only screen and (max-width: 992px) {
     .row1 {
       .foot-col {
