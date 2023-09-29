@@ -844,7 +844,15 @@ nav {
       color: black;
     }
   }
-
+  @media only screen and (max-width: 570px) {
+    .nav-pills {
+     
+      .nav-link {
+        font-size: 12px;
+        padding: 4px;
+      }
+    }
+  }
   @media only screen and (max-width: 992px) {
     .nav-pills {
       justify-content: start;
@@ -857,36 +865,7 @@ nav {
   }
 }
 
-.singleProject {
-  position: relative;
-  @include w-h-fill;
-  background-size: contain;
-  &::before {
-    content: "";
-    background-color: rgba(0, 0, 0, 0.4);
-    position: absolute;
-    top: 0;
-    left: 0;
-    @include w-h-fill;
-    z-index: 1;
-  }
-  .text {
-    @include w-h-fill;
-    color: white;
-    z-index: 3;
-    position: relative;
-    // @include D-flex;
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    flex-direction: column;
-    @include projectCard-txt;
-    h3 {
-      @include head;
-      color: white;
-    }
-  }
-}
+
 
 //------------------( About Component Style )------------------------------------------------
 .aboutSec {
