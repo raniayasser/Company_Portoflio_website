@@ -60,7 +60,7 @@ const Projects = () => {
                           <img src={project.photo} alt="..." />
                           <div className="slide-text">
                             <p>{t(project.pragraph)}</p>
-                            <a href="/singleProject">
+                            <a href="#">
                               <h1>{t(project.title)}</h1>
                             </a>
                           </div>
@@ -81,7 +81,7 @@ const Projects = () => {
                           <img src={project.photo} alt="..." />
                           <div className="slide-text">
                             <p>{t(project.pragraph)}</p>
-                            <a href="/singleProject">
+                            <a href="#">
                               <h1>{t(project.title)}</h1>
                             </a>
                           </div>
@@ -104,7 +104,7 @@ const Projects = () => {
                           <img src={project.photo} alt="..." />
                           <div className="slide-text">
                             <p>{t(project.pragraph)}</p>
-                            <a href="/singleProject">
+                            <a href="#">
                               <h1>{t(project.title)}</h1>
                             </a>
                           </div>
@@ -127,7 +127,7 @@ const Projects = () => {
                           <img src={project.photo} alt="..." />
                           <div className="slide-text">
                             <p>{t(project.pragraph)}</p>
-                            <a href="/singleProject">
+                            <a href="#">
                               <h1>{t(project.title)}</h1>
                             </a>
                           </div>
